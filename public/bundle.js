@@ -2382,9 +2382,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React3 = require_react();
+          var React5 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React3.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React5.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3989,7 +3989,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React3.Children.forEach(props.children, function(child) {
+                  React5.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -12436,7 +12436,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React3.Component().refs;
+          var emptyRefsObject = new React5.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -23508,7 +23508,7 @@
   });
 
   // src/main.tsx
-  var import_react2 = __toESM(require_react(), 1);
+  var import_react4 = __toESM(require_react(), 1);
   var import_client = __toESM(require_client(), 1);
 
   // src/clipboard.ts
@@ -23546,6 +23546,18 @@
     return [cachedContainer, onSetState];
   };
 
+  // src/logo.tsx
+  var import_react2 = __toESM(require_react(), 1);
+  function Logo({}) {
+    return /* @__PURE__ */ import_react2.default.createElement("section", { className: "section" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo-description" }, /* @__PURE__ */ import_react2.default.createElement("h2", null, "Logo"), /* @__PURE__ */ import_react2.default.createElement("p", null, "The primary version of the logo is the one with the tagline \u201CThe Impact Tool\u201D and should be used whenever possible.", " "), /* @__PURE__ */ import_react2.default.createElement("p", null, "When the use of space or the small physical size of the logo makes the tagline difficult to read, a secondary logo can be used.")), /* @__PURE__ */ import_react2.default.createElement("div", null, /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo-instance" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo-name" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "mb-1" }, /* @__PURE__ */ import_react2.default.createElement("b", null, "Primary logo / with tagline")), /* @__PURE__ */ import_react2.default.createElement("a", { href: "public/logo/logo-primary.png", download: true }, "Download")), /* @__PURE__ */ import_react2.default.createElement("img", { className: "logo-img", src: "public/logo/logo-primary.png" })), /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo-instance" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo-name" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "mb-1" }, /* @__PURE__ */ import_react2.default.createElement("b", null, "Secondary logo / without tagline")), /* @__PURE__ */ import_react2.default.createElement("a", { href: "public/logo/logo-secondary.png", download: true }, "Download")), /* @__PURE__ */ import_react2.default.createElement("img", { className: "logo-img", src: "public/logo/logo-secondary.png" })))));
+  }
+
+  // src/Footer.tsx
+  var import_react3 = __toESM(require_react(), 1);
+  function Footer({}) {
+    return /* @__PURE__ */ import_react3.default.createElement("footer", { className: "footer" }, /* @__PURE__ */ import_react3.default.createElement("img", { className: "footer-logo", src: "public/logo/logo-primary.png" }));
+  }
+
   // src/main.tsx
   var COLORS = [
     { name: "Melvio Purple", hex: "#5f3c66", color: "#efe0db" },
@@ -23574,9 +23586,9 @@
           showToast("Copying failed :(", e);
       }
     };
-    return /* @__PURE__ */ import_react2.default.createElement("main", { className: "app container" }, /* @__PURE__ */ import_react2.default.createElement("h2", null, "Colors"), /* @__PURE__ */ import_react2.default.createElement("p", { className: "mb-3" }, "In terms of hierarchy, the brand colors are all of equal value, which means they can be used as equal surfaces in different applications. It is essential to ensure that the text on the surface is clearly legible, i.e. the contrast between the text and the background is sufficient."), /* @__PURE__ */ import_react2.default.createElement("div", { className: "flex" }, COLORS.map((color) => {
+    return /* @__PURE__ */ import_react4.default.createElement("main", { className: "app" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "container" }, /* @__PURE__ */ import_react4.default.createElement("h1", { className: "app-title" }, "Melvio visual guidelines"), /* @__PURE__ */ import_react4.default.createElement(Logo, null), /* @__PURE__ */ import_react4.default.createElement("section", { className: "section" }, /* @__PURE__ */ import_react4.default.createElement("h2", null, "Colors"), /* @__PURE__ */ import_react4.default.createElement("p", { className: "mb-3" }, "In terms of hierarchy, the brand colors are all of equal value, which means they can be used as equal surfaces in different applications. It is essential to ensure that the text on the surface is clearly legible, i.e. the contrast between the text and the background is sufficient."), /* @__PURE__ */ import_react4.default.createElement("div", { className: "flex" }, COLORS.map((color) => {
       const style = { background: color.hex, color: color.color };
-      return /* @__PURE__ */ import_react2.default.createElement(
+      return /* @__PURE__ */ import_react4.default.createElement(
         "div",
         {
           key: color.hex,
@@ -23584,14 +23596,14 @@
           style,
           onClick: (e) => onCopyColor(color.hex, e)
         },
-        /* @__PURE__ */ import_react2.default.createElement("h4", { className: "color-name" }, color.name),
-        /* @__PURE__ */ import_react2.default.createElement("p", { className: "color-hex" }, "HEX: ", color.hex)
+        /* @__PURE__ */ import_react4.default.createElement("h4", { className: "color-name" }, color.name),
+        /* @__PURE__ */ import_react4.default.createElement("p", { className: "color-hex" }, "HEX: ", color.hex)
       );
-    })), /* @__PURE__ */ import_react2.default.createElement(Toast, null), /* @__PURE__ */ import_react2.default.createElement("textarea", { className: "unsecure-textarea", id: "unsecureTextArea" }));
+    })))), /* @__PURE__ */ import_react4.default.createElement(Footer, null), /* @__PURE__ */ import_react4.default.createElement(Toast, null), /* @__PURE__ */ import_react4.default.createElement("textarea", { className: "unsecure-textarea", id: "unsecureTextArea" }));
   };
   var container = document.getElementById("root");
   var root = (0, import_client.createRoot)(container);
-  root.render(/* @__PURE__ */ import_react2.default.createElement(App, null));
+  root.render(/* @__PURE__ */ import_react4.default.createElement(App, null));
 })();
 /*! Bundled license information:
 

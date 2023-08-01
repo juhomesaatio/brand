@@ -5,7 +5,8 @@ import { colors, fonts } from "./data";
 import { useToast } from "./use-toast";
 
 import "./main.css";
-import Page from "./page";
+import Logo from "./logo";
+import Footer from "./Footer";
 
 const COLORS = [
   { name: "Melvio Purple", hex: "#5f3c66", color: "#efe0db" },
@@ -35,30 +36,38 @@ const App = () => {
     }
   };
   return (
-    <main className="app container">
-      <h2>Colors</h2>
-      <p className="mb-3">
-        In terms of hierarchy, the brand colors are all of equal value, which
-        means they can be used as equal surfaces in different applications. It
-        is essential to ensure that the text on the surface is clearly legible,
-        i.e. the contrast between the text and the background is sufficient.
-      </p>
-      <div className="flex">
-        {COLORS.map((color) => {
-          const style = { background: color.hex, color: color.color };
-          return (
-            <div
-              key={color.hex}
-              className="color"
-              style={style}
-              onClick={(e) => onCopyColor(color.hex, e)}
-            >
-              <h4 className="color-name">{color.name}</h4>
-              <p className="color-hex">HEX: {color.hex}</p>
-            </div>
-          );
-        })}
+    <main className="app">
+      <div className="container">
+        <h1 className="app-title">Melvio visual guidelines</h1>
+        <Logo />
+        <section className="section">
+          <h2>Colors</h2>
+          <p className="mb-3">
+            In terms of hierarchy, the brand colors are all of equal value,
+            which means they can be used as equal surfaces in different
+            applications. It is essential to ensure that the text on the surface
+            is clearly legible, i.e. the contrast between the text and the
+            background is sufficient.
+          </p>
+          <div className="flex">
+            {COLORS.map((color) => {
+              const style = { background: color.hex, color: color.color };
+              return (
+                <div
+                  key={color.hex}
+                  className="color"
+                  style={style}
+                  onClick={(e) => onCopyColor(color.hex, e)}
+                >
+                  <h4 className="color-name">{color.name}</h4>
+                  <p className="color-hex">HEX: {color.hex}</p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
       </div>
+      <Footer />
       {/* <section className="colors">
         <h2>Colors</h2>
         <section className="color-boxes">
