@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "esbuild",
     "dev:watch": " node ./esbuild.js",
-    "dev:server": "http-server public --s -c-1 -p 80  --cors='*'"
+    "dev:server": "http-server ./ --s -c-1 -p 80  --cors='*'"
   },
   "author": "",
   "dependencies": {
