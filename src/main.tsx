@@ -5,10 +5,18 @@ import { colors, fonts } from "./data";
 import { useToast } from "./use-toast";
 
 import "./main.css";
+import Page from "./page";
+
+const COLORS = [
+  { name: "Melvio Purple", hex: "#5f3c66", color: "#efe0db" },
+  { name: "Melvio Red", hex: "#f88ba2", color: "#5f3c66" },
+  { name: "Melvio Green", hex: "#608a7b", color: "#efe0db" },
+  { name: "Melvio Light Red", hex: "#efe0db", color: "#5f3c66" },
+  { name: "Melvio Light Green", hex: "#b3ccb2", color: "#5f3c66" },
+];
 
 const App = () => {
   const [Toast, showToast] = useToast();
-
   const onCopyColor = (hex: string, e: MouseEvent) => {
     if (window.isSecureContext) {
       navigator.clipboard.writeText(hex).then(
@@ -28,8 +36,30 @@ const App = () => {
   };
   return (
     <main className="app container">
-      <h1>Styleguide</h1>
-      <section className="colors">
+      <h2>Colors</h2>
+      <p className="mb-3">
+        In terms of hierarchy, the brand colors are all of equal value, which
+        means they can be used as equal surfaces in different applications. It
+        is essential to ensure that the text on the surface is clearly legible,
+        i.e. the contrast between the text and the background is sufficient.
+      </p>
+      <div className="flex">
+        {COLORS.map((color) => {
+          const style = { background: color.hex, color: color.color };
+          return (
+            <div
+              key={color.hex}
+              className="color"
+              style={style}
+              onClick={(e) => onCopyColor(color.hex, e)}
+            >
+              <h4 className="color-name">{color.name}</h4>
+              <p className="color-hex">HEX: {color.hex}</p>
+            </div>
+          );
+        })}
+      </div>
+      {/* <section className="colors">
         <h2>Colors</h2>
         <section className="color-boxes">
           {colors.map((color) => {
@@ -96,12 +126,12 @@ const App = () => {
                 Me-säätiö on suomalainen säätiö, joka tekee työtä sen eteen,
                 että jokaisella lapsella ja nuorella on taustastaan riippumatta
                 mahdollisuus harrastaa, uskoa tulevaisuuteen ja tuntea
-                kuuluvansa joukkoon.
+                kuuluvansa joukkoon. 1234567890
               </p>
             </section>
           );
         })}
-      </section>
+      </section> */}
       <Toast />
       <textarea className="unsecure-textarea" id="unsecureTextArea" />
     </main>
@@ -128,11 +158,6 @@ const ColorUses = ({ heading, colors, usesProp }) => {
   );
 };
 
-const params = window.location.search.split("=");
-const keyLocation = params.findIndex((value) => value.includes("key"));
-const key = params[keyLocation + 1];
-if (key === window.atob("NWU0YzQ5NDQtMGE5Ni0xMWVlLWJlNTYtMDI0MmFjMTIwMDAy")) {
-  const container = document.getElementById("root");
-  const root = createRoot(container);
-  root.render(<App />);
-}
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<App />);

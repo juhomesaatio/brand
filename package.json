@@ -1,13 +1,13 @@
 {
-  "name": "brand brand",
-  "version": "1.0.0",
+  "name": "melvio brand",
+  "version": "0.0.1",
   "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "esbuild",
     "dev:watch": " node ./esbuild.js",
-    "dev:server": "http-server public --s -c-1 -p 80"
+    "dev:server": "http-server public --s -c-1 -p 80  --cors='*'"
   },
   "author": "",
   "dependencies": {

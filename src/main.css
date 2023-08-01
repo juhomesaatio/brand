@@ -1,9 +1,10 @@
 /* src/main.css */
 :root {
-  --color-purple: #603c66;
-  --color-green: #b4ccb3;
-  --color-red: #f98ba2;
-  --color-offwhite: #efe0dc;
+  --color-purple: #5f3c66;
+  --color-red: #f88ba2;
+  --color-green: #608a7b;
+  --color-lightred: #efe0db;
+  --color-lightgreen: #b3ccb2;
   --color-gray: #d9d9d9;
 }
 
@@ -16,6 +17,7 @@ body {
   font-family: rounaregular;
   font-size: 16px;
   line-height: 1.5;
+  color: var(--color-purple);
   /* -webkit-font-smoothing: antialiased; */
 }
 
@@ -47,6 +49,7 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 16px;
+  font-family: rounamedium;
 }
 
 a {
@@ -81,7 +84,7 @@ a {
 .colors {
   margin-bottom: 40px;
 }
-.color,
+._color,
 .color--small {
   height: 104px;
   width: 104px;
@@ -116,10 +119,12 @@ a {
 .color-use {
   display: flex;
 }
+
 .color-name {
   cursor: pointer;
 }
-.color-name:hover {
+
+_.color-name:hover {
   text-decoration: underline;
 }
 
@@ -152,6 +157,33 @@ a {
 }
 .font-info {
   margin-right: 32px;
+}
+
+.app {
+  margin-top: 24px;
+}
+.flex {
+  display: flex;
+}
+.color {
+  width: 20%;
+  color: var(--color-lightred);
+  padding: 24px 8px 24px 24px;
+  border-radius: 16px;
+  height: 280px;
+  cursor: pointer;
+}
+.color-name {
+  font-size: 20px;
+}
+.mb-1 {
+  margin-bottom: 16px;
+}
+.mb-2 {
+  margin-bottom: 24px;
+}
+.mb-3 {
+  margin-bottom: 32px;
 }
 
 @keyframes toast {
