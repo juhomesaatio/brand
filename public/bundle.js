@@ -2382,9 +2382,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React5 = require_react();
+          var React9 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React5.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React9.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3989,7 +3989,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React5.Children.forEach(props.children, function(child) {
+                  React9.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -12436,7 +12436,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React5.Component().refs;
+          var emptyRefsObject = new React9.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -23508,8 +23508,49 @@
   });
 
   // src/main.tsx
-  var import_react4 = __toESM(require_react(), 1);
+  var import_react8 = __toESM(require_react(), 1);
   var import_client = __toESM(require_client(), 1);
+
+  // src/logo.tsx
+  var import_react2 = __toESM(require_react(), 1);
+
+  // src/icons.tsx
+  var import_react = __toESM(require_react(), 1);
+  var IconDownload = () => /* @__PURE__ */ import_react.default.createElement("svg", { className: "icon", version: "1.1", viewBox: "0 0 24 24" }, /* @__PURE__ */ import_react.default.createElement("g", { id: "save", fill: "currentColor" }, /* @__PURE__ */ import_react.default.createElement("path", { d: "M11.2,16.6c0.4,0.5,1.2,0.5,1.6,0l6-6.3C19.3,9.8,18.8,9,18,9h-4c0,0,0.2-4.6,0-7c-0.1-1.1-0.9-2-2-2c-1.1,0-1.9,0.9-2,2    c-0.2,2.3,0,7,0,7H6c-0.8,0-1.3,0.8-0.8,1.4L11.2,16.6z" }), /* @__PURE__ */ import_react.default.createElement("path", { d: "M19,19H5c-1.1,0-2,0.9-2,2v0c0,0.6,0.4,1,1,1h16c0.6,0,1-0.4,1-1v0C21,19.9,20.1,19,19,19z" })));
+
+  // src/logo.tsx
+  function Logo({}) {
+    return /* @__PURE__ */ import_react2.default.createElement("section", { className: "section logo" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "layout" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "layout-description" }, /* @__PURE__ */ import_react2.default.createElement("h2", null, "Logo"), /* @__PURE__ */ import_react2.default.createElement("p", null, "The primary version of the logo is the one with the tagline \u201CThe Impact Tool\u201D and should be used whenever possible.", " "), /* @__PURE__ */ import_react2.default.createElement("p", null, "When the use of space or the small physical size of the logo makes the tagline difficult to read, a secondary logo can be used.")), /* @__PURE__ */ import_react2.default.createElement("div", null, /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo-instance" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo-name" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "mb-1" }, /* @__PURE__ */ import_react2.default.createElement("b", null, "Primary logo / with tagline")), /* @__PURE__ */ import_react2.default.createElement("a", { href: "public/logo/logo-primary.png", download: true }, "Download png", /* @__PURE__ */ import_react2.default.createElement(IconDownload, null))), /* @__PURE__ */ import_react2.default.createElement("img", { className: "logo-img", src: "public/logo/logo-primary.png" })), /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo-instance" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo-name" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "mb-1" }, /* @__PURE__ */ import_react2.default.createElement("b", null, "Secondary logo / without tagline")), /* @__PURE__ */ import_react2.default.createElement("a", { href: "public/logo/logo-secondary.png", download: true }, "Download png", /* @__PURE__ */ import_react2.default.createElement(IconDownload, null))), /* @__PURE__ */ import_react2.default.createElement("img", { className: "logo-img", src: "public/logo/logo-secondary.png" })))));
+  }
+
+  // src/Footer.tsx
+  var import_react3 = __toESM(require_react(), 1);
+  function Footer({}) {
+    return /* @__PURE__ */ import_react3.default.createElement("footer", { className: "footer" }, /* @__PURE__ */ import_react3.default.createElement("img", { className: "footer-logo", src: "public/logo/logo-primary.png" }));
+  }
+
+  // src/colors.tsx
+  var import_react5 = __toESM(require_react(), 1);
+
+  // src/use-toast.tsx
+  var import_react4 = __toESM(require_react(), 1);
+  var useToast = () => {
+    const [state, setState] = (0, import_react4.useState)({
+      message: "",
+      event: null
+    });
+    const onSetState = (message, event) => setState({ message, event });
+    const cachedContainer = (0, import_react4.useCallback)(() => {
+      if (!state.event)
+        return null;
+      const style = {
+        left: state.event.clientX,
+        top: state.event.clientY
+      };
+      return /* @__PURE__ */ import_react4.default.createElement("aside", { className: "toast", style, key: state.message }, /* @__PURE__ */ import_react4.default.createElement("span", { className: "toast-message" }, state.message));
+    }, [state]);
+    return [cachedContainer, onSetState];
+  };
 
   // src/clipboard.ts
   function unsecureClipboardCopy(text, textArea) {
@@ -23526,39 +23567,7 @@
     }
   }
 
-  // src/use-toast.tsx
-  var import_react = __toESM(require_react(), 1);
-  var useToast = () => {
-    const [state, setState] = (0, import_react.useState)({
-      message: "",
-      event: null
-    });
-    const onSetState = (message, event) => setState({ message, event });
-    const cachedContainer = (0, import_react.useCallback)(() => {
-      if (!state.event)
-        return null;
-      const style = {
-        left: state.event.clientX,
-        top: state.event.clientY
-      };
-      return /* @__PURE__ */ import_react.default.createElement("aside", { className: "toast", style, key: state.message }, /* @__PURE__ */ import_react.default.createElement("span", { className: "toast-message" }, state.message));
-    }, [state]);
-    return [cachedContainer, onSetState];
-  };
-
-  // src/logo.tsx
-  var import_react2 = __toESM(require_react(), 1);
-  function Logo({}) {
-    return /* @__PURE__ */ import_react2.default.createElement("section", { className: "section" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo-description" }, /* @__PURE__ */ import_react2.default.createElement("h2", null, "Logo"), /* @__PURE__ */ import_react2.default.createElement("p", null, "The primary version of the logo is the one with the tagline \u201CThe Impact Tool\u201D and should be used whenever possible.", " "), /* @__PURE__ */ import_react2.default.createElement("p", null, "When the use of space or the small physical size of the logo makes the tagline difficult to read, a secondary logo can be used.")), /* @__PURE__ */ import_react2.default.createElement("div", null, /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo-instance" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo-name" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "mb-1" }, /* @__PURE__ */ import_react2.default.createElement("b", null, "Primary logo / with tagline")), /* @__PURE__ */ import_react2.default.createElement("a", { href: "public/logo/logo-primary.png", download: true }, "Download")), /* @__PURE__ */ import_react2.default.createElement("img", { className: "logo-img", src: "public/logo/logo-primary.png" })), /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo-instance" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "logo-name" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "mb-1" }, /* @__PURE__ */ import_react2.default.createElement("b", null, "Secondary logo / without tagline")), /* @__PURE__ */ import_react2.default.createElement("a", { href: "public/logo/logo-secondary.png", download: true }, "Download")), /* @__PURE__ */ import_react2.default.createElement("img", { className: "logo-img", src: "public/logo/logo-secondary.png" })))));
-  }
-
-  // src/Footer.tsx
-  var import_react3 = __toESM(require_react(), 1);
-  function Footer({}) {
-    return /* @__PURE__ */ import_react3.default.createElement("footer", { className: "footer" }, /* @__PURE__ */ import_react3.default.createElement("img", { className: "footer-logo", src: "public/logo/logo-primary.png" }));
-  }
-
-  // src/main.tsx
+  // src/colors.tsx
   var COLORS = [
     { name: "Melvio Purple", hex: "#5f3c66", color: "#efe0db" },
     { name: "Melvio Red", hex: "#f88ba2", color: "#5f3c66" },
@@ -23566,7 +23575,7 @@
     { name: "Melvio Light Red", hex: "#efe0db", color: "#5f3c66" },
     { name: "Melvio Light Green", hex: "#b3ccb2", color: "#5f3c66" }
   ];
-  var App = () => {
+  function Colors({}) {
     const [Toast, showToast] = useToast();
     const onCopyColor = (hex, e) => {
       if (window.isSecureContext) {
@@ -23586,9 +23595,9 @@
           showToast("Copying failed :(", e);
       }
     };
-    return /* @__PURE__ */ import_react4.default.createElement("main", { className: "app" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "container" }, /* @__PURE__ */ import_react4.default.createElement("h1", { className: "app-title" }, "Melvio visual guidelines"), /* @__PURE__ */ import_react4.default.createElement(Logo, null), /* @__PURE__ */ import_react4.default.createElement("section", { className: "section" }, /* @__PURE__ */ import_react4.default.createElement("h2", null, "Colors"), /* @__PURE__ */ import_react4.default.createElement("p", { className: "mb-3" }, "In terms of hierarchy, the brand colors are all of equal value, which means they can be used as equal surfaces in different applications. It is essential to ensure that the text on the surface is clearly legible, i.e. the contrast between the text and the background is sufficient."), /* @__PURE__ */ import_react4.default.createElement("div", { className: "flex" }, COLORS.map((color) => {
+    return /* @__PURE__ */ import_react5.default.createElement("section", { className: "section" }, /* @__PURE__ */ import_react5.default.createElement("h2", null, "Colors"), /* @__PURE__ */ import_react5.default.createElement("p", { className: "mb-3" }, "In terms of hierarchy, the brand colors are all of equal value, which means they can be used as equal surfaces in different applications. It is essential to ensure that the text on the surface is clearly legible, i.e. the contrast between the text and the background is sufficient."), /* @__PURE__ */ import_react5.default.createElement("div", { className: "flex" }, COLORS.map((color) => {
       const style = { background: color.hex, color: color.color };
-      return /* @__PURE__ */ import_react4.default.createElement(
+      return /* @__PURE__ */ import_react5.default.createElement(
         "div",
         {
           key: color.hex,
@@ -23596,14 +23605,31 @@
           style,
           onClick: (e) => onCopyColor(color.hex, e)
         },
-        /* @__PURE__ */ import_react4.default.createElement("h4", { className: "color-name" }, color.name),
-        /* @__PURE__ */ import_react4.default.createElement("p", { className: "color-hex" }, "HEX: ", color.hex)
+        /* @__PURE__ */ import_react5.default.createElement("h4", { className: "color-name" }, color.name),
+        /* @__PURE__ */ import_react5.default.createElement("p", { className: "color-hex" }, "HEX: ", color.hex)
       );
-    })))), /* @__PURE__ */ import_react4.default.createElement(Footer, null), /* @__PURE__ */ import_react4.default.createElement(Toast, null), /* @__PURE__ */ import_react4.default.createElement("textarea", { className: "unsecure-textarea", id: "unsecureTextArea" }));
+    })), /* @__PURE__ */ import_react5.default.createElement(Toast, null), /* @__PURE__ */ import_react5.default.createElement("textarea", { className: "unsecure-textarea", id: "unsecureTextArea" }));
+  }
+
+  // src/fonts.tsx
+  var import_react6 = __toESM(require_react(), 1);
+  function Fonts({}) {
+    return /* @__PURE__ */ import_react6.default.createElement("section", { className: "font section" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "layout" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "layout-description" }, /* @__PURE__ */ import_react6.default.createElement("h2", null, "Primary typography"), /* @__PURE__ */ import_react6.default.createElement("p", null, "Our brand font is Rouna with fonts weights/ styles shown here. It should be used whenever technically possible."), /* @__PURE__ */ import_react6.default.createElement("a", { href: "public/rouna.zip", download: true }, "Download fonts", /* @__PURE__ */ import_react6.default.createElement(IconDownload, null))), /* @__PURE__ */ import_react6.default.createElement("div", { className: "layout-content" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "font-large" }, "Aa123"), /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement("div", { className: "font-name" }, "Rouna")))));
+  }
+
+  // src/fonts-uses.tsx
+  var import_react7 = __toESM(require_react(), 1);
+  function FontsUses({}) {
+    return /* @__PURE__ */ import_react7.default.createElement("section", { className: "fontsamples section" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "layout" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "layout-description" }, /* @__PURE__ */ import_react7.default.createElement("h2", null, "Use of primary typography"), /* @__PURE__ */ import_react7.default.createElement("p", null, "Attached is one example of using a brand font. This guideline does not bind the designer to make other types of typographical choices.")), /* @__PURE__ */ import_react7.default.createElement("div", { className: "layout-content" }, /* @__PURE__ */ import_react7.default.createElement("div", { className: "fontsample" }, /* @__PURE__ */ import_react7.default.createElement("h5", { className: "" }, "Rouna Medium"), /* @__PURE__ */ import_react7.default.createElement("div", { className: "h1 font-sample" }, "Main headline")), /* @__PURE__ */ import_react7.default.createElement("div", { className: "fontsample" }, /* @__PURE__ */ import_react7.default.createElement("h5", { className: "" }, "Rouna Regular"), /* @__PURE__ */ import_react7.default.createElement("div", { className: "fontsample-h4" }, "Introduction Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien.")), /* @__PURE__ */ import_react7.default.createElement("div", { className: "fontsample" }, /* @__PURE__ */ import_react7.default.createElement("h5", { className: "" }, "Rouna Regular"), /* @__PURE__ */ import_react7.default.createElement("div", { className: "p" }, "Introduction Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien.")), /* @__PURE__ */ import_react7.default.createElement("div", { className: "fontsample" }, /* @__PURE__ */ import_react7.default.createElement("h5", { className: "rounaregular" }, "Rouna Bold"), /* @__PURE__ */ import_react7.default.createElement("div", { className: "" }, /* @__PURE__ */ import_react7.default.createElement("b", { className: "rounabold" }, "Subheadline lorem ipsum"), /* @__PURE__ */ import_react7.default.createElement("br", null), "Sed augue orci, lacinia eu tincidunt et eleifend nec lacus. Donec ultricies nisl ut felis, suspendisse potenti. Lorem ipsum ligula ut hendrerit mollis, ipsum erat vehicula risus, eu suscipit sem libero nec erat. Aliquam erat volutpat.")))));
+  }
+
+  // src/main.tsx
+  var App = () => {
+    return /* @__PURE__ */ import_react8.default.createElement("main", { className: "app" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "container" }, /* @__PURE__ */ import_react8.default.createElement("h1", { className: "app-title" }, "Melvio visual guidelines"), /* @__PURE__ */ import_react8.default.createElement(Logo, null), /* @__PURE__ */ import_react8.default.createElement(Colors, null), /* @__PURE__ */ import_react8.default.createElement(Fonts, null), /* @__PURE__ */ import_react8.default.createElement(FontsUses, null)), /* @__PURE__ */ import_react8.default.createElement(Footer, null));
   };
   var container = document.getElementById("root");
   var root = (0, import_client.createRoot)(container);
-  root.render(/* @__PURE__ */ import_react4.default.createElement(App, null));
+  root.render(/* @__PURE__ */ import_react8.default.createElement(App, null));
 })();
 /*! Bundled license information:
 

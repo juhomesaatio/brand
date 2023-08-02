@@ -8,6 +8,10 @@
   --color-gray: #d9d9d9;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
@@ -15,13 +19,14 @@ body {
 }
 body {
   font-family: rounaregular;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: var(--color-purple);
   /* -webkit-font-smoothing: antialiased; */
 }
 
-h1 {
+h1,
+.h1 {
   font-size: 64px;
 }
 
@@ -29,16 +34,24 @@ h2 {
   font-size: 40px;
 }
 
-h3 {
+h3,
+.h3 {
   font-size: 32px;
 }
 
-h4 {
+h4,
+.h4 {
   font-size: 24px;
 }
 
 h5 {
   font-size: 16px;
+}
+
+.h1,
+.h3,
+.h4 {
+  font-family: rounamedium;
 }
 
 h1,
@@ -51,6 +64,7 @@ h6 {
   margin-bottom: 16px;
   font-family: rounamedium;
 }
+
 b,
 strong {
   font-family: rounabold;
@@ -164,6 +178,8 @@ _.color-name:hover {
 }
 .flex {
   display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
 }
 .color {
   width: 20%;
@@ -179,12 +195,15 @@ _.color-name:hover {
 
 .section {
   border-top: 1px solid var(--color-purple);
-  padding-top: 48px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
-.logo {
+.logo,
+.layout {
   display: flex;
 }
-.logo-description {
+.logo-description,
+.layout-description {
   width: 25%;
   flex-shrink: 0;
   margin-right: 128px;
@@ -216,6 +235,15 @@ _.color-name:hover {
   max-width: 256px;
 }
 
+.font-large {
+  font-size: 240px;
+  line-height: 1;
+}
+.font-name {
+  font-size: 64px;
+  font-family: rounamedium;
+}
+
 .mb-1 {
   margin-bottom: 16px;
 }
@@ -227,6 +255,29 @@ _.color-name:hover {
 }
 .app-title {
   margin: 128px 0 192px;
+}
+
+.font-sample {
+  line-height: 1;
+}
+.fontsample {
+  display: flex;
+  margin-bottom: 24px;
+}
+.fontsample > *:first-child {
+  width: 20%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  border-top: 1px solid var(--color-purple);
+  margin-right: 24px;
+}
+.fontsample-h4 {
+  font-size: 24px;
+}
+.icon {
+  width: 18px;
+  vertical-align: middle;
+  margin-left: 6px;
 }
 
 @keyframes toast {
@@ -250,30 +301,36 @@ _.color-name:hover {
 }
 
 @media screen and (max-width: 700px) {
-  h1 {
+  body {
+    font-size: 16px;
+  }
+  h1,
+  .h1 {
     font-size: 48px;
   }
-
   h2 {
     font-size: 32px;
   }
-
-  h3 {
+  h3,
+  .h3 {
     font-size: 24px;
   }
-
-  h4 {
+  h4,
+  .h4 {
     font-size: 18px;
+  }
+  .section {
+    padding-top: 24px;
+    padding-bottom: 48px;
   }
 
   .color {
-    height: 64px;
-    width: 64px;
+    height: 128px;
+    padding: 8px;
+    font-size: 16px;
   }
-  .color-box {
-    display: flex;
-    width: 46%;
-    margin: 16px 2%;
+  .color-name {
+    font-size: 16px;
   }
   .color-box--fluid {
     width: auto;
@@ -284,5 +341,29 @@ _.color-name:hover {
   .font-info {
     margin-right: 0;
     margin-bottom: 16px;
+  }
+  .layout {
+    display: block;
+  }
+  .layout-description {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+  .font-large {
+    font-size: 20vw;
+  }
+  .logo-instance {
+    display: block;
+    margin-bottom: 32px;
+  }
+  .logo-name {
+    width: 100%;
+  }
+  .footer {
+    margin-top: 64px;
+  }
+  .app-title {
+    margin-top: 64px;
+    margin-bottom: 80px;
   }
 }

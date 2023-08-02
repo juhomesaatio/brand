@@ -1,10 +1,11 @@
 import React from "react";
+import { IconDownload } from "./icons";
 
 export default function Logo({}) {
   return (
-    <section className="section">
-      <div className="logo">
-        <div className="logo-description">
+    <section className="section logo">
+      <div className="layout">
+        <div className="layout-description">
           <h2>Logo</h2>
           <p>
             The primary version of the logo is the one with the tagline “The
@@ -22,7 +23,8 @@ export default function Logo({}) {
                 <b>Primary logo / with tagline</b>
               </div>
               <a href="public/logo/logo-primary.png" download>
-                Download
+                Download png
+                <IconDownload />
               </a>
             </div>
             <img className="logo-img" src="public/logo/logo-primary.png" />
@@ -33,7 +35,8 @@ export default function Logo({}) {
                 <b>Secondary logo / without tagline</b>
               </div>
               <a href="public/logo/logo-secondary.png" download>
-                Download
+                Download png
+                <IconDownload />
               </a>
             </div>
             <img className="logo-img" src="public/logo/logo-secondary.png" />
